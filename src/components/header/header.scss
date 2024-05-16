@@ -1,0 +1,38 @@
+.header {
+    display: flex;
+    flex: 0 0 auto;
+    gap: 55px;
+    align-items: center;
+    justify-content: center;
+    height: 75px;
+
+    &__title {
+        text-decoration: none;
+        color: rgb(35 35 35);
+        font-size: 1.5rem;
+        font-weight: 700;
+        font-style: oblique;
+    }
+
+    &__links {
+        display: flex;
+        gap: 50px;
+        align-items: center;
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: rgb(35 35 35);
+            font-size: 16px;
+        }
+    }
+
+    &__favorite {
+        img {
+            width: 25px;
+            height: 25px;
+        }
+    }
+}

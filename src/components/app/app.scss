@@ -1,0 +1,46 @@
+/* stylelint-disable-next-line import-notation */
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arimo, sans-serif;
+}
+
+.product-links {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    transition: 0.1s all;
+    padding-top: 32px;
+    width: 100%;
+
+    div {
+        cursor: pointer;
+
+        &:hover {
+            color: red;
+        }
+    }
+
+    p {
+        padding: 0 5px;
+    }
+
+    a {
+        display: block;
+        transition: 0.1s all;
+        text-decoration: none;
+        color: rgb(35 35 35);
+
+        &:hover {
+            color: red;
+        }
+    }
+
+    /* stylelint-disable-next-line order/order */
+    div:last-of-type {
+        text-decoration: underline;
+    }
+}

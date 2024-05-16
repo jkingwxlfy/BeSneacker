@@ -1,0 +1,147 @@
+.cart-page {
+    &__container {
+        position: relative;
+        margin: 0 auto;
+        padding-bottom: 128px;
+        width: 1140px;
+    }
+
+    &__title {
+        padding-top: 80px;
+        padding-bottom: 48px;
+        font-size: 32px;
+    }
+
+    &__price {
+        display: flex;
+        justify-content: end;
+        padding-top: 32px;
+        font-size: 32px;
+        font-weight: 500;
+    }
+
+    &__empty {
+        position: absolute;
+        top: 215px;
+        width: 100%;
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    &__button {
+        display: flex;
+        justify-content: end;
+        padding-top: 65px;
+
+        button {
+            transition: 0.3s all;
+            outline: none;
+            border: 0;
+            border-radius: 8px;
+            background-color: rgb(58 198 92);
+            cursor: pointer;
+            width: 285px;
+            height: 40px;
+            text-align: center;
+            color: #fff;
+            font-size: 20px;
+
+            &:hover {
+                background: rgb(45 156 73);
+            }
+
+            &:active {
+                transform: translate(0, 0.5em);
+            }
+        }
+    }
+
+    &__list {
+        display: grid;
+        gap: 32px;
+
+        &-item {
+            display: flex;
+            position: relative;
+            gap: 30px;
+            align-items: center;
+            border: 1px solid rgb(240 240 240);
+            padding: 0 65px;
+            color: rgb(35 35 35);
+            font-size: 20px;
+            font-weight: 400;
+
+            &__image {
+                display: block;
+                width: 200px;
+                height: 200px;
+            }
+
+            &__counter {
+                display: flex;
+                gap: 25px;
+                align-items: center;
+                justify-content: center;
+
+                &-button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 100%;
+                    background-color: rgb(255 206 127);
+                    cursor: pointer;
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+
+            &__wrapper {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            &__main {
+                display: flex;
+                flex-direction: column;
+                padding-bottom: 30px;
+            }
+
+            &__title {
+                padding-bottom: 16px;
+                text-decoration: none;
+                color: rgb(35 35 35);
+
+                &:hover {
+                    color: red;
+                }
+            }
+
+            &__delete {
+                box-sizing: content-box;
+                display: block;
+                position: absolute;
+                top: 17px;
+                right: 47px;
+                cursor: pointer;
+                padding: 15px;
+                width: 15px;
+                height: 15px;
+                user-select: none;
+            }
+
+            &__price {
+                display: grid;
+                position: absolute;
+                right: 62px;
+                bottom: 32px;
+                gap: 8px;
+            }
+
+            &__count {
+                font-size: 20px;
+                font-weight: 500;
+            }
+        }
+    }
+}
