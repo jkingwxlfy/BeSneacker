@@ -17,7 +17,9 @@ const FavoritePage: React.FC = () => {
                     {favorite.length ? (
                         favorite.map(item => (
                             <div className='favorite-page__item' key={item.id}>
-                                <Link to={`/${item.category}/${item.id}`}>
+                                <Link
+                                    to={`/category/${item.category}/${item.id}`}
+                                >
                                     <img
                                         className='favorite-page__item-main'
                                         src={item.image}

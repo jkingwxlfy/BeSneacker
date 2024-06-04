@@ -119,7 +119,7 @@ const CartPage: React.FC = () => {
 
                                     <div className='cart-page__list-item__wrapper'>
                                         <Link
-                                            to={`/${item.category}/${item.id}`}
+                                            to={`/category/${item.category}/${item.id}`}
                                             className='cart-page__list-item__title'
                                         >
                                             {item.title}
