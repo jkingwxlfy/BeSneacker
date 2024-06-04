@@ -69,7 +69,8 @@ const ProductItemPage: React.FC = () => {
         }
     }, [status.error])
 
-    const { title, brand, price, image, description, color, sex } = staff!
+    const { title, brand, price, image, description, color, sex, count } =
+        staff!
 
     return (
         <section className='product-item-page'>
@@ -77,7 +78,7 @@ const ProductItemPage: React.FC = () => {
                 <div className='product-links'>
                     <Link to={RouteNames.HOME}>На главную</Link>
                     <p>/</p>
-                    <Link to={`/${category!}`}>
+                    <Link to={`/category/${category!}`}>
                         {category === Category.SNEACKERS
                             ? 'Кроссовки'
                             : 'Одежда'}
@@ -105,8 +106,10 @@ const ProductItemPage: React.FC = () => {
                                     {title}
                                 </div>
                                 <div className='product-item-page__price'>
-                                    Цена : <span>{price}</span>
+                                    Цена : <span>{price}</span> <br /> <br />
+                                    Количество : <span>{count}</span>
                                 </div>
+
                                 <div className='product-item-page__buttons'>
                                     <button
                                         className='product-item-page__greenbt'

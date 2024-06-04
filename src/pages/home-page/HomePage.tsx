@@ -144,7 +144,7 @@ const HomePage: React.FC = () => {
             <div className='staff'>
                 <div className='staff__title'>
                     <div>Популярные кросовки :</div>
-                    <Link to='/sneacker'>
+                    <Link to='/category/sneacker'>
                         Показать еще{' '}
                         <img src={GreenArrow} alt='Картинка стрелки' />
                     </Link>
@@ -163,7 +163,7 @@ const HomePage: React.FC = () => {
             <div className='staff'>
                 <div className='staff__title'>
                     <div>Популярная одежда :</div>
-                    <Link to='/wear'>
+                    <Link to='/category/wear'>
                         Показать еще{' '}
                         <img src={GreenArrow} alt='Картинка стрелки' />
                     </Link>

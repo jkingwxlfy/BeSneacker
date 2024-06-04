@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { RouteNames } from '@/routes'
-import { Select } from 'antd'
 import type { IProduct } from '@/models/IProduct'
 import { Category } from '@/models/IFilter'
 import { useAppSelector, useAppDispatch } from '@/hooks/redux'
@@ -19,16 +18,9 @@ import type { IStatus } from '@/models/IStatus'
 
 import Filter from '@/components/filter/Filter'
 import ProductItem from '@/components/product-item/ProductItem'
-
-import './productlistpage.scss'
 import Spinner from '@/components/UI/spinner/Spinner'
 
-const selectOptions = [
-    { value: 'По популярности', label: <span>По популярности</span> },
-    { value: 'По дате выхода', label: <span>По дате выхода</span> },
-    { value: 'По возрастанию', label: <span>По возрастанию</span> },
-    { value: 'По убыванию', label: <span>По убыванию</span> },
-]
+import './productlistpage.scss'
 
 interface IProductListProps {
     products: IProduct[]
@@ -61,7 +53,7 @@ const ProductListPage: React.FC = () => {
 
     const onReturnBack = () => {
         if (category) {
-            navigate(`/${category}`)
+            navigate(`/category/${category}`)
             dispatch(setSelectedFilters({ ...selectedFilters, brand: null }))
             dispatch(clearSearchQuery())
             dispatch(filterAndSearchProducts())
@@ -87,6 +79,11 @@ const ProductListPage: React.FC = () => {
     }, [status.error])
 
     useEffect(() => {
+        if (category !== Category.SNEACKERS && category !== Category.WEAR) {
+            navigate('/*')
+            return
+        }
+
         dispatch(setCurrentCategory(currentCategory))
         request(`http://localhost:3000/${currentCategory}`)
             .then((data: IProduct[]) => {
@@ -120,16 +117,6 @@ const ProductListPage: React.FC = () => {
                 <div className='product-list-page__title'>
                     {category === Category.SNEACKERS ? 'Кроссовки' : 'Одежда'}
                 </div>
-                {/* <div className='product-list-page__select'>
-                    <Select
-                        options={selectOptions}
-                        defaultValue='Сортировка по'
-                        style={{
-                            width: 255,
-                            textAlign: 'center',
-                        }}
-                    />
-                </div> */}
                 <div className='product-list-page__staff'>
                     <Filter />
                     {status.loading ? (

@@ -13,7 +13,7 @@ const ProductItem: React.FC<IProductItemProps> = ({ data, category }) => {
     const { image, title, price, count, id } = data
 
     return (
-        <Link className='product-item' to={`/${category}/${id}`}>
+        <Link className='product-item' to={`/category/${category}/${id}`}>
             <div
                 className='product-item__image'
                 style={{ backgroundImage: `url(${image})` }}

@@ -18,6 +18,7 @@ interface SliceState {
     favorite: IProduct[]
     queryError: boolean
     cartPrice: number
+    isOrdered: boolean
 }
 
 const initialState: SliceState = {
@@ -36,6 +37,7 @@ const initialState: SliceState = {
     favorite: [],
     queryError: false,
     cartPrice: 0,
+    isOrdered: false,
 }
 
 const staffSlice = createSlice({
@@ -165,6 +167,9 @@ const staffSlice = createSlice({
                 return product
             })
         },
+        setIsOrdered: (state, action: PayloadAction<boolean>) => {
+            state.isOrdered = action.payload
+        },
     },
 })
 
@@ -182,5 +187,6 @@ export const {
     setCart,
     decreaseProductCount,
     increaseProductCount,
+    setIsOrdered,
 } = actions
 export default reducer
